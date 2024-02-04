@@ -15,3 +15,9 @@ server {
   }
 }
 ```
+```
+telnet my-site.com 80
+---------------
+GET / HTTP/1.1
+Host: my-site.com
+```
