@@ -119,3 +119,21 @@ server {
 ```
 curl -D - -s -H 'Host: my-site.com' http://my-site.com/admin
 ```
+
+Балансировка
+```
+upstream backend {
+  server ip-1;
+  server ip-2;
+}
+server {
+  listen 80;
+
+  server_name my-site.com;
+
+  location / {
+    proxy_pass http://backend;
+  }
+}
+
+```
